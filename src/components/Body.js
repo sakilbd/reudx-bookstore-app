@@ -13,10 +13,14 @@ function Body() {
     useEffect(() => {
       
     dispatch(fetchBooks)
+   
       return () => {
         
       }
     }, [dispatch])
+
+    console.log(books);
+    
     
   return (
     <div>
@@ -38,7 +42,12 @@ function Body() {
               </div>
               <div class="lws-bookContainer">
                 {/* <!-- Card 1 --> */}
-                <BookCard/>
+                {
+                    books.map(item=>{
+                        return (<BookCard bookInfo={item}/>)
+                    })
+                }
+                
               </div>
             </div>
             <div>

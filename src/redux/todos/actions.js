@@ -15,10 +15,11 @@ export const loaded = (books) => {
     };
 };
 
-export const added = (todoText) => {
+export const added = (book) => {
+  
     return {
         type: ADDED,
-        payload: todoText,
+        payload: book,
     };
 };
 

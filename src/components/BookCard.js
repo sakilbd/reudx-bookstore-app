@@ -1,17 +1,26 @@
 import React from "react";
+import Star from "./Star";
 
-function BookCard() {
+function BookCard({ bookInfo }) {
+
+  let rating = new Array(parseInt(bookInfo.rating)).fill(0);
+
   return (
     <div>
       <div class="book-card">
         <img
           class="h-[240px] w-[170px] object-cover lws-bookThumbnail"
-          src="https://m.media-amazon.com/images/P/B07DZ86WP7.01._SCLZZZZZZZ_SX500_.jpg"
+          src={bookInfo.thumbnail}
           alt="book"
         />
         <div class="flex-1 h-full pr-2 pt-2 flex flex-col">
           <div class="flex items-center justify-between">
-            <span class="badge-success lws-Badge">featured</span>
+            {bookInfo.featured ? (
+              <span class="badge-success lws-Badge">featured</span>
+            ) : (
+              <span class="badge-info lws-Badge"></span>
+            )}
+
             <div class="text-gray-500 space-x-2">
               <button class="lws-edit">
                 <svg
@@ -47,34 +56,17 @@ function BookCard() {
           </div>
 
           <div class="space-y-2 mt-4 h-full">
-            <h4 class="lws-bookName">
-              Life Hurts: A Doctor's Personal Journey Through Anorexia
-            </h4>
-            <p class="lws-author">Dr Elizabeth McNaught</p>
+            <h4 class="lws-bookName">{bookInfo.name}</h4>
+            <p class="lws-author">{bookInfo.author}</p>
             <div class="lws-stars">
-              <svg viewBox="0 0 20 20" fill="currentColor" class="lws-star">
-                <path
-                  fill-rule="evenodd"
-                  d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              <svg viewBox="0 0 20 20" fill="currentColor" class="lws-star">
-                <path
-                  fill-rule="evenodd"
-                  d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              <svg viewBox="0 0 20 20" fill="currentColor" class="lws-star">
-                <path
-                  fill-rule="evenodd"
-                  d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                  clip-rule="evenodd"
-                />
-              </svg>
+              {rating.map(item=>{
+                return ( <Star />)
+              })}
+               
+              
+            
             </div>
-            <p class="lws-price">BDT 14</p>
+            <p class="lws-price">BDT {bookInfo.price}</p>
           </div>
         </div>
       </div>
