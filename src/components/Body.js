@@ -3,7 +3,7 @@ import Navbar from './Navbar'
 import BookCard from './BookCard';
 import Form from './Form'
 import { useDispatch, useSelector } from 'react-redux';
-import fetchBooks from '../redux/todos/thunk/fetchBooks';
+import fetchBooks from '../redux/books/thunk/fetchBooks';
 
 
 

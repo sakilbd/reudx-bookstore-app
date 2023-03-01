@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import addBooks from "../redux/todos/thunk/addBooks";
+import addBooks from "../redux/books/thunk/addBooks";
 
 function Form() {
   const dispatch = useDispatch()
@@ -15,6 +15,9 @@ function Form() {
     if(fields[i].type == 'checkbox'){
       formData[fields[i].name] = checkBox;
      
+    }
+    else if (fields[i].type == 'number'){
+      formData[fields[i].name] = parseInt(fields[i].value)
     }
     else{
       formData[fields[i].name] = (fields[i].value)

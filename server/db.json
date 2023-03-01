@@ -6,7 +6,7 @@
       "thumbnail": "https://m.media-amazon.com/images/I/51Ga5GuElyL._SX331_BO1,204,203,200_.jpg",
       "price": 14,
       "rating": 3,
-      "featured": false,
+      "featured": true,
       "id": 1
     },
     {
@@ -19,58 +19,22 @@
       "id": 2
     },
     {
-      "name": "Kessie Whitney",
-      "author": "Culpa quod nostrum r",
-      "thumbnail": "Deserunt voluptate o",
-      "price": "551",
-      "rating": "2",
-      "featured": true,
+      "name": "sadfsad",
+      "author": "sdfsadf",
+      "thumbnail": "sadfsadf",
+      "price": 33,
+      "rating": 2,
+      "featured": false,
       "id": 3
     },
     {
-      "name": "Kessie Whitney",
-      "author": "Culpa quod nostrum r",
-      "thumbnail": "Deserunt voluptate o",
-      "price": "551",
-      "rating": "2",
-      "featured": false,
+      "name": "sadfsad",
+      "author": "sdfsadf",
+      "thumbnail": "sadfsadf",
+      "price": 33,
+      "rating": 2,
+      "featured": true,
       "id": 4
-    },
-    {
-      "name": "Kessie Whitney",
-      "author": "Culpa quod nostrum r",
-      "thumbnail": "Deserunt voluptate o",
-      "price": "551",
-      "rating": "2",
-      "featured": false,
-      "id": 5
-    },
-    {
-      "name": "Kessie Whitney",
-      "author": "Culpa quod nostrum r",
-      "thumbnail": "Deserunt voluptate o",
-      "price": "551",
-      "rating": "2",
-      "featured": true,
-      "id": 6
-    },
-    {
-      "name": "Kessie Whitney",
-      "author": "Culpa quod nostrum r",
-      "thumbnail": "Deserunt voluptate o",
-      "price": "551",
-      "rating": "2",
-      "featured": true,
-      "id": 7
-    },
-    {
-      "name": "Kessie Whitney",
-      "author": "Culpa quod nostrum r",
-      "thumbnail": "Deserunt voluptate o",
-      "price": "551",
-      "rating": "2",
-      "featured": false,
-      "id": 8
     }
   ]
 }
