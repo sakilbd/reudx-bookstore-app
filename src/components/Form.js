@@ -1,34 +1,53 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import addBooks from "../redux/books/thunk/addBooks";
 
 function Form() {
-  const dispatch = useDispatch()
-  const [checkBox,setCheckBox]=useState(false)
-  const submitHandler= (e)=>{
-  e.preventDefault()
-  let fields = e.target;
-  let fieldsCount = fields.length-1; //as there is a button so we have to exclued that 
-  let formData = {};
+  const books = useSelector((state) => state.books);
+  const bookEditAction = useSelector((state) => state.booksAction);
+  const dispatch = useDispatch();
+  const [checkBox, setCheckBox] = useState(false);
+  const [input, setInput] = useState({});
 
-  for(let i =0;i<fieldsCount;i++){
-    if(fields[i].type == 'checkbox'){
-      formData[fields[i].name] = checkBox;
-     
+  const changeHandle = (e) => {
+    setInput({ ...input, [e.target.name]: e.target.value });
+  };
+  let updateBookInfo = {};
+  useEffect(() => {
+    if (bookEditAction.book_edit.status) {
+      let filterdBook = books.filter(
+        (item) => item.id == bookEditAction.book_edit.id
+      );
+      updateBookInfo = { ...filterdBook[0] };
+      // console.log("ghorer dim");
+      // console.log(updateBookInfo.name);
+      setInput({ ...input, ...updateBookInfo });
     }
-    else if (fields[i].type == 'number'){
-      formData[fields[i].name] = parseInt(fields[i].value)
-    }
-    else{
-      formData[fields[i].name] = (fields[i].value)
-    }
-    
-  }
- 
-  console.log(JSON.stringify(formData));
-  dispatch(addBooks((formData)));
 
-  }
+    return () => {};
+  }, [bookEditAction]);
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    let fields = e.target;
+    let fieldsCount = fields.length - 1; //as there is a button so we have to exclued that
+    let formData = {};
+
+    for (let i = 0; i < fieldsCount; i++) {
+      if (fields[i].type == "checkbox") {
+        formData[fields[i].name] = checkBox;
+      } else if (fields[i].type == "number") {
+        formData[fields[i].name] = parseInt(fields[i].value);
+      } else {
+        formData[fields[i].name] = fields[i].value;
+      }
+    }
+
+    // console.log(JSON.stringify(formData));
+    dispatch(addBooks(formData));
+  };
+  console.log(input);
+
   return (
     <div>
       <div class="p-4 overflow-hidden bg-white shadow-cardShadow rounded-md">
@@ -42,6 +61,8 @@ function Form() {
               type="text"
               id="input-Bookname"
               name="name"
+              value={input.name}
+              onChange={changeHandle}
             />
           </div>
 
@@ -53,6 +74,8 @@ function Form() {
               type="text"
               id="input-Bookauthor"
               name="author"
+              value={input.author}
+              onChange={changeHandle}
             />
           </div>
 
@@ -64,6 +87,8 @@ function Form() {
               type="text"
               id="input-Bookthumbnail"
               name="thumbnail"
+              value={input.thumbnail}
+              onChange={changeHandle}
             />
           </div>
 
@@ -76,6 +101,8 @@ function Form() {
                 type="number"
                 id="input-Bookprice"
                 name="price"
+                value={input.price}
+                onChange={changeHandle}
               />
             </div>
 
@@ -89,6 +116,8 @@ function Form() {
                 name="rating"
                 min="1"
                 max="5"
+                value={input.rating}
+                onChange={changeHandle}
               />
             </div>
           </div>
@@ -99,8 +128,9 @@ function Form() {
               type="checkbox"
               name="featured"
               class="w-4 h-4"
-              onClick={()=>setCheckBox(!checkBox)}
-             
+              onClick={() => setCheckBox(!checkBox)}
+              checked={input.featured}
+              onChange={changeHandle}
             />
             <label for="featured" class="ml-2 text-sm">
               {" "}
