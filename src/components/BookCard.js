@@ -1,10 +1,16 @@
 import React from "react";
 import Star from "./Star";
+import { useDispatch, useSelector } from "react-redux";
+import deleteBooks from "../redux/books/thunk/deleteBooks";
 
 function BookCard({ bookInfo }) {
 
+  const books = useSelector((state)=>state.books);
+  const dispatch = useDispatch();
   let rating = new Array(parseInt(bookInfo.rating)).fill(0);
-
+  const deleteBookHandler = ()=>{
+    dispatch(deleteBooks(bookInfo.id))
+  }
   return (
     <div>
       <div class="book-card">
@@ -37,7 +43,7 @@ function BookCard({ bookInfo }) {
                   />
                 </svg>
               </button>
-              <button class="lws-delete">
+              <button class="lws-delete" onClick={deleteBookHandler}>
                 <svg
                   fill="none"
                   viewBox="0 0 24 24"

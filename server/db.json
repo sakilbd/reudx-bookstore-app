@@ -17,24 +17,6 @@
       "rating": 4,
       "featured": false,
       "id": 2
-    },
-    {
-      "name": "sadfsad",
-      "author": "sdfsadf",
-      "thumbnail": "sadfsadf",
-      "price": 33,
-      "rating": 2,
-      "featured": false,
-      "id": 3
-    },
-    {
-      "name": "sadfsad",
-      "author": "sdfsadf",
-      "thumbnail": "sadfsadf",
-      "price": 33,
-      "rating": 2,
-      "featured": true,
-      "id": 4
     }
   ]
 }
