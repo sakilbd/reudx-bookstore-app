@@ -2,6 +2,7 @@ import React from "react";
 import Star from "./Star";
 import { useDispatch, useSelector } from "react-redux";
 import deleteBooks from "../redux/books/thunk/deleteBooks";
+import { bookEdit } from "../redux/booksAction/actions";
 
 function BookCard({ bookInfo }) {
 
@@ -10,6 +11,9 @@ function BookCard({ bookInfo }) {
   let rating = new Array(parseInt(bookInfo.rating)).fill(0);
   const deleteBookHandler = ()=>{
     dispatch(deleteBooks(bookInfo.id))
+  }
+  const bookEditHandler = ()=>{
+    dispatch(bookEdit(true,bookInfo.id))
   }
   return (
     <div>
@@ -28,7 +32,7 @@ function BookCard({ bookInfo }) {
             )}
 
             <div class="text-gray-500 space-x-2">
-              <button class="lws-edit">
+              <button class="lws-edit" onClick={bookEditHandler}>
                 <svg
                   fill="none"
                   viewBox="0 0 24 24"
