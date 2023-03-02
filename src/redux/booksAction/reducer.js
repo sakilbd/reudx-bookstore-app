@@ -7,7 +7,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                book_edit:{
-                ...state.book_edit,
+                // ...state.book_edit,
                 status:action.payload.editStatus,
                 id:action.payload.bookID
                }

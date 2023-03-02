@@ -12,7 +12,11 @@ function Form() {
   const [input, setInput] = useState({});
 
   const changeHandle = (e) => {
-    setInput({ ...input, [e.target.name]: e.target.value });
+    if (e.target.type == "checkbox") {
+      setInput({ ...input, [e.target.name]: checkBox });
+    } else {
+      setInput({ ...input, [e.target.name]: e.target.value });
+    }
   };
   let updateBookInfo = {};
   useEffect(() => {
@@ -54,13 +58,13 @@ function Form() {
       thumbnail: "",
       price: "",
       rating: "",
-      featured: "",
+      featured: false,
       id: "",
     };
-    setInput(obj)
+    setInput(obj);
   };
 
-  async function submitHandler (e) {
+  async function submitHandler(e) {
     e.preventDefault();
     // console.group("Update Check ");
     // console.log(e.target[6].id)
@@ -71,14 +75,14 @@ function Form() {
       console.log(formData);
       console.groupEnd();
       await dispatch(updateBook(bookEditAction.book_edit.id, formData));
-      // dispatch(bookEdit(false, ""));
+      dispatch(bookEdit(false, ""));
       clearFormData();
     } else {
       const formData = getFromData(e);
       // console.log(JSON.stringify(formData));
       dispatch(addBooks(formData));
     }
-  };
+  }
   console.log(input);
 
   return (

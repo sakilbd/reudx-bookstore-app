@@ -1,7 +1,7 @@
 {
   "books": [
     {
-      "name": "sdasdf",
+      "name": "sdasdfee",
       "author": "sdfsaf sdf sdf",
       "thumbnail": "https://m.media-amazon.com/images/I/51Ga5GuElyL._SX331_BO1,204,203,200_.jpg",
       "price": 343,
@@ -10,8 +10,8 @@
       "id": 1
     },
     {
-      "name": "Jameson Best",
-      "author": "Voluptatem in quis ",
+      "name": "Jameson Best sdaf ",
+      "author": "Voluptatem in quis some changes ",
       "thumbnail": "https://m.media-amazon.com/images/P/1501171348.01._SCLZZZZZZZ_SX500_.jpg",
       "price": 114,
       "rating": 4,
@@ -20,7 +20,7 @@
     },
     {
       "name": "The Last Thing He Told Me: A Novel",
-      "author": "wow",
+      "author": "wow wow",
       "thumbnail": "https://m.media-amazon.com/images/P/1501171348.01._SCLZZZZZZZ_SX500_.jpg",
       "price": 13,
       "rating": 4,
@@ -29,7 +29,7 @@
     },
     {
       "name": "Slow Horses 2",
-      "author": "mathaআ",
+      "author": "matha sdfsdfsdf",
       "thumbnail": "https://m.media-amazon.com/images/I/51Ga5GuElyL._SX331_BO1,204,203,200_.jpg",
       "price": 14,
       "rating": 3,

@@ -12,8 +12,8 @@ function BookCard({ bookInfo }) {
   const deleteBookHandler = ()=>{
     dispatch(deleteBooks(bookInfo.id))
   }
-  const bookEditHandler = ()=>{
-    dispatch(bookEdit(true,bookInfo.id))
+  const bookEditHandler = (id)=>{
+    dispatch(bookEdit(true,id))
   }
   return (
     <div>
@@ -32,7 +32,7 @@ function BookCard({ bookInfo }) {
             )}
 
             <div class="text-gray-500 space-x-2">
-              <button class="lws-edit" onClick={bookEditHandler}>
+              <button class="lws-edit" onClick={()=>bookEditHandler(bookInfo.id)}>
                 <svg
                   fill="none"
                   viewBox="0 0 24 24"
