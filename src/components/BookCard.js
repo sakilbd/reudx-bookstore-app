@@ -8,7 +8,7 @@ function BookCard({ bookInfo }) {
 
   const books = useSelector((state)=>state.books);
   const dispatch = useDispatch();
-  let rating = new Array(parseInt(bookInfo.rating)).fill(0);
+  let rating = new Array(parseInt(bookInfo?.rating)).fill(0);
   const deleteBookHandler = ()=>{
     dispatch(deleteBooks(bookInfo.id))
   }

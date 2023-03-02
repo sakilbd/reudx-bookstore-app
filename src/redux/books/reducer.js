@@ -1,18 +1,14 @@
 import {
   ADDED,
-  ALLCOMPLETED,
-  CLEARCOMPLETED,
-  COLORSELECTED,
+ 
   DELETED,
   LOADED,
-  TOGGLED,
+  UPDATED,
+ 
 } from "./actionTypes";
 import initialState from "./initialState";
 
-const nextTodoId = (todos) => {
-  const maxId = todos.reduce((maxId, todo) => Math.max(todo.id, maxId), -1);
-  return maxId + 1;
-};
+
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -25,40 +21,18 @@ const reducer = (state = initialState, action) => {
     case DELETED:
       return state.filter((books) => books.id !== action.payload);
 
-    case TOGGLED:
-      return state.map((todo) => {
-        if (todo.id !== action.payload) {
-          return todo;
+    case UPDATED:
+      return state.map((book) => {
+        if (book.id == action.payload.book_id) {
+          return action.payload.book_updated_data;
         }
 
         return {
-          ...todo,
-          completed: !todo.completed,
+          ...book
         };
       });
 
-    case COLORSELECTED:
-      const { todoId, color } = action.payload;
-      return state.map((todo) => {
-        if (todo.id !== todoId) {
-          return todo;
-        }
-        return {
-          ...todo,
-          color: color,
-        };
-      });
-
-    case ALLCOMPLETED:
-      return state.map((todo) => {
-        return {
-          ...todo,
-          completed: true,
-        };
-      });
-
-    case CLEARCOMPLETED:
-      return state.filter((todo) => !todo.completed);
+    
 
     default:
       return state;

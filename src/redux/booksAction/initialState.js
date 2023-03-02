@@ -1,7 +1,7 @@
 const initialState = {
     search_text: '',
     book_edit:{
-        status:true,
+        status:false,
         id:''
     },
 };

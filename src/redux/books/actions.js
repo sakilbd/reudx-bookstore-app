@@ -6,6 +6,7 @@ import {
     DELETED,
     LOADED,
     TOGGLED,
+    UPDATED,
 } from "./actionTypes";
 
 export const loaded = (books) => {
@@ -23,38 +24,23 @@ export const added = (book) => {
     };
 };
 
-export const toggled = (todoId) => {
+export const updated = (bookId,bookUpdatedData) => {
     return {
-        type: TOGGLED,
-        payload: todoId,
-    };
-};
-
-export const colorSelected = (todoId, color) => {
-    return {
-        type: COLORSELECTED,
+        type: UPDATED,
         payload: {
-            todoId,
-            color,
+            book_id:bookId,
+            book_updated_data:bookUpdatedData
         },
     };
 };
 
-export const deleted = (todoId) => {
+
+
+export const deleted = (bookId) => {
     return {
         type: DELETED,
-        payload: todoId,
+        payload: bookId,
     };
 };
 
-export const allCompleted = () => {
-    return {
-        type: ALLCOMPLETED,
-    };
-};
 
-export const clearCompleted = () => {
-    return {
-        type: CLEARCOMPLETED,
-    };
-};

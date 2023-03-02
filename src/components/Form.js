@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import addBooks from "../redux/books/thunk/addBooks";
-
+import { bookEdit } from "../redux/booksAction/actions";
+import updateBook from "../redux/books/thunk/updateBook";
+import { updated } from "../redux/books/actions";
 function Form() {
   const books = useSelector((state) => state.books);
   const bookEditAction = useSelector((state) => state.booksAction);
@@ -27,8 +29,7 @@ function Form() {
     return () => {};
   }, [bookEditAction]);
 
-  const submitHandler = (e) => {
-    e.preventDefault();
+  const getFromData = (e) => {
     let fields = e.target;
     let fieldsCount = fields.length - 1; //as there is a button so we have to exclued that
     let formData = {};
@@ -42,9 +43,45 @@ function Form() {
         formData[fields[i].name] = fields[i].value;
       }
     }
+    return formData;
+  };
 
-    // console.log(JSON.stringify(formData));
-    dispatch(addBooks(formData));
+  const clearFormData =(e)=>{
+    let fields = e.target;
+    let fieldsCount = fields.length - 1; //as there is a button so we have to exclued that
+    let formData = {};
+    console.log(fields);
+    console.log(input)
+    for (let i = 0; i < fieldsCount; i++) {
+      if (fields[i].type == "checkbox") {
+       setInput({...input,[fields[i].name] : 'off'});
+      } else if (fields[i].type == "number") {
+        setInput({...input,[fields[i].name]:'22'});
+      } else {
+        setInput({...input,[fields[i].name]:'Sexy'});
+      }
+    }
+  };
+ 
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    // console.group("Update Check ");
+    // console.log(e.target[6].id)
+    // console.groupEnd();
+    if (e.target[6].id == "update") {
+      dispatch(bookEdit(false, ""));
+      // clearFormData(e);
+      const formData = getFromData(e);
+      console.group("updated From Data")
+      console.log(formData);
+      console.groupEnd()
+      dispatch(updated(1,formData))
+    } else {
+      const formData = getFromData(e);
+      // console.log(JSON.stringify(formData));
+      dispatch(addBooks(formData));
+    }
   };
   console.log(input);
 
@@ -137,10 +174,15 @@ function Form() {
               This is a featured book{" "}
             </label>
           </div>
-
-          <button type="submit" class="submit" id="submit">
-            Add Book
-          </button>
+          {bookEditAction.book_edit.status ? (
+            <button type="submit" class="submit" id="update">
+              Update Book
+            </button>
+          ) : (
+            <button type="submit" class="submit" id="submit">
+              Add Book
+            </button>
+          )}
         </form>
       </div>
     </div>

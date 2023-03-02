@@ -17,42 +17,6 @@
       "rating": 4,
       "featured": false,
       "id": 2
-    },
-    {
-      "name": "The Last Thing He Told Me: A Novel",
-      "author": "Laura Dave",
-      "thumbnail": "https://m.media-amazon.com/images/P/1501171348.01._SCLZZZZZZZ_SX500_.jpg",
-      "price": 13,
-      "rating": 4,
-      "featured": false,
-      "id": 5
-    },
-    {
-      "name": "Rebecca Mcknight",
-      "author": "Aliquip asperiores n",
-      "thumbnail": "Nemo lorem anim fugi",
-      "price": 115,
-      "rating": 3,
-      "featured": true,
-      "id": 6
-    },
-    {
-      "name": "ghorer dim",
-      "author": "Laura Dave",
-      "thumbnail": "https://m.media-amazon.com/images/P/1501171348.01._SCLZZZZZZZ_SX500_.jpg",
-      "price": 13,
-      "rating": 4,
-      "featured": false,
-      "id": 7
-    },
-    {
-      "name": "vugichugi",
-      "author": "Laura Dave",
-      "thumbnail": "https://m.media-amazon.com/images/P/1501171348.01._SCLZZZZZZZ_SX500_.jpg",
-      "price": 13,
-      "rating": 4,
-      "featured": true,
-      "id": 8
     }
   ]
 }
