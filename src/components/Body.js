@@ -24,7 +24,7 @@ function Body() {
       searchFiltered=[...filteredBooks];
     }
     else{
-      searchFiltered = [...filteredBooks.filter((item)=>(item.name).toLowerCase().indexOf((booksAction.search_text).toLowerCase())>0)]
+      searchFiltered = [...filteredBooks.filter((item)=>(item.name).toLowerCase().indexOf((booksAction.search_text).toLowerCase())>=0)]
       
     }
     console.group("Searched")
@@ -36,7 +36,7 @@ function Body() {
       searchFiltered=[...filteredBooks];
     }
     else{
-      searchFiltered = [...filteredBooks.filter((item)=>(item.name).toLowerCase().indexOf((booksAction.search_text).toLowerCase())>0)]
+      searchFiltered = [...filteredBooks.filter((item)=>(item.name).toLowerCase().indexOf((booksAction.search_text).toLowerCase())>=0)]
       
     }
   }
