@@ -17,51 +17,6 @@
       "rating": 4,
       "featured": false,
       "id": 2
-    },
-    {
-      "name": "sdfsadf",
-      "author": "asdfsadf",
-      "thumbnail": "sadfsadfs",
-      "price": 343,
-      "rating": 5,
-      "featured": false,
-      "id": 3
-    },
-    {
-      "name": "sdfsadf",
-      "author": "asdfsadf",
-      "thumbnail": "sadfsadfs",
-      "price": 343,
-      "rating": 5,
-      "featured": true,
-      "id": 4
-    },
-    {
-      "name": "sdfsadf",
-      "author": "asdfsadf",
-      "thumbnail": "sadfsadfs",
-      "price": 343,
-      "rating": 5,
-      "featured": true,
-      "id": 5
-    },
-    {
-      "name": "sdfsadf",
-      "author": "asdfsadf",
-      "thumbnail": "sadfsadfs",
-      "price": 343,
-      "rating": 5,
-      "featured": false,
-      "id": 6
-    },
-    {
-      "name": "sdfsadf",
-      "author": "asdfsadf",
-      "thumbnail": "sadfsadfs",
-      "price": 343,
-      "rating": 2,
-      "featured": true,
-      "id": 7
     }
   ]
 }

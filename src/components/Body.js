@@ -7,22 +7,41 @@ import fetchBooks from "../redux/books/thunk/fetchBooks";
 
 function Body() {
   const books = useSelector((state) => state.books);
+  const booksAction = useSelector((state) => state.booksAction);
   const dispatch = useDispatch();
-  const [catagory,setCatagory] = useState('all');
-  let filteredBooks=[];
+  const [catagory, setCatagory] = useState("all");
+  let filteredBooks = [];
+  let searchFiltered=[];
+  
   useEffect(() => {
     dispatch(fetchBooks);
 
     return () => {};
   }, [dispatch]);
-  if(catagory=='featured'){
-    filteredBooks = [...books.filter(item=>item.featured==true)]
-  }
-  else{
+  if (catagory == "featured") {
+    filteredBooks = [...books.filter((item) => item.featured == true)];
+    if(booksAction.search_text==''){
+      searchFiltered=[...filteredBooks];
+    }
+    else{
+      searchFiltered = [...filteredBooks.filter((item)=>(item.name).toLowerCase().indexOf((booksAction.search_text).toLowerCase())>0)]
+      
+    }
+    console.group("Searched")
+    console.log(searchFiltered);
+    console.groupEnd();
+  } else {
     filteredBooks = [...books];
+    if(booksAction.search_text==''){
+      searchFiltered=[...filteredBooks];
+    }
+    else{
+      searchFiltered = [...filteredBooks.filter((item)=>(item.name).toLowerCase().indexOf((booksAction.search_text).toLowerCase())>0)]
+      
+    }
   }
   console.log(books);
- 
+
   return (
     <div>
       <Navbar />
@@ -33,13 +52,19 @@ function Body() {
               <h4 class="mt-2 text-xl font-bold">Book List</h4>
 
               <div class="flex items-center space-x-4">
-                <button class={`filter-btn ${catagory=="all" && "active-filter"}`} id="lws-filterAll" onClick={()=>setCatagory("all")}>
+                <button
+                  class={`filter-btn ${catagory == "all" && "active-filter"}`}
+                  id="lws-filterAll"
+                  onClick={() => setCatagory("all")}
+                >
                   All
                 </button>
                 <button
-                  class={`filter-btn ${catagory=="featured" && "active-filter"}`}
+                  class={`filter-btn ${
+                    catagory == "featured" && "active-filter"
+                  }`}
                   id="lws-filterFeatured"
-                  onClick={()=>setCatagory("featured")}
+                  onClick={() => setCatagory("featured")}
                 >
                   Featured
                 </button>
@@ -47,7 +72,7 @@ function Body() {
             </div>
             <div class="lws-bookContainer">
               {/* <!-- Card 1 --> */}
-              {filteredBooks.map((item) => {
+              {searchFiltered.map((item) => {
                 return <BookCard bookInfo={item} />;
               })}
             </div>
