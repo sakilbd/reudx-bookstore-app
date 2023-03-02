@@ -1,12 +1,12 @@
 {
   "books": [
     {
-      "name": "Slow Horses (Deluxe Edition)",
-      "author": "Mick Herron",
+      "name": "Slow Horses ",
+      "author": "matha",
       "thumbnail": "https://m.media-amazon.com/images/I/51Ga5GuElyL._SX331_BO1,204,203,200_.jpg",
       "price": 14,
       "rating": 3,
-      "featured": true,
+      "featured": false,
       "id": 1
     },
     {
@@ -17,6 +17,33 @@
       "rating": 4,
       "featured": false,
       "id": 2
+    },
+    {
+      "name": "The Last Thing He Told Me: A Novel",
+      "author": "murgi",
+      "thumbnail": "https://m.media-amazon.com/images/P/1501171348.01._SCLZZZZZZZ_SX500_.jpg",
+      "price": 13,
+      "rating": 4,
+      "featured": true,
+      "id": 3
+    },
+    {
+      "name": "Slow Horses ",
+      "author": "murgi",
+      "thumbnail": "https://m.media-amazon.com/images/I/51Ga5GuElyL._SX331_BO1,204,203,200_.jpg",
+      "price": 14,
+      "rating": 2,
+      "featured": false,
+      "id": 4
+    },
+    {
+      "name": "Dante Boyer",
+      "author": "Recusandae Sit quib",
+      "thumbnail": "Dolorem soluta id la",
+      "price": 12,
+      "rating": 3,
+      "featured": false,
+      "id": 5
     }
   ]
 }

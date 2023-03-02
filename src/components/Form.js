@@ -76,7 +76,7 @@ function Form() {
       console.group("updated From Data")
       console.log(formData);
       console.groupEnd()
-      dispatch(updated(1,formData))
+      dispatch(updateBook(bookEditAction.book_edit.id,formData))
     } else {
       const formData = getFromData(e);
       // console.log(JSON.stringify(formData));
