@@ -18,12 +18,13 @@ function Form() {
   useEffect(() => {
     if (bookEditAction.book_edit.status) {
       let filterdBook = books.filter(
-        (item) => item.id == bookEditAction.book_edit.id
+        (item) => item.id === bookEditAction.book_edit.id
       );
       updateBookInfo = { ...filterdBook[0] };
       // console.log("ghorer dim");
       // console.log(updateBookInfo.name);
       setInput({ ...input, ...updateBookInfo });
+      console.log(JSON.stringify(input));
     }
 
     return () => {};
@@ -46,37 +47,32 @@ function Form() {
     return formData;
   };
 
-  const clearFormData =(e)=>{
-    let fields = e.target;
-    let fieldsCount = fields.length - 1; //as there is a button so we have to exclued that
-    let formData = {};
-    console.log(fields);
-    console.log(input)
-    for (let i = 0; i < fieldsCount; i++) {
-      if (fields[i].type == "checkbox") {
-       setInput({...input,[fields[i].name] : 'off'});
-      } else if (fields[i].type == "number") {
-        setInput({...input,[fields[i].name]:'22'});
-      } else {
-        setInput({...input,[fields[i].name]:'Sexy'});
-      }
-    }
+  const clearFormData = () => {
+    let obj = {
+      name: "",
+      author: "",
+      thumbnail: "",
+      price: "",
+      rating: "",
+      featured: "",
+      id: "",
+    };
+    setInput(obj)
   };
- 
 
-  const submitHandler = (e) => {
+  async function submitHandler (e) {
     e.preventDefault();
     // console.group("Update Check ");
     // console.log(e.target[6].id)
     // console.groupEnd();
     if (e.target[6].id == "update") {
-      dispatch(bookEdit(false, ""));
-      // clearFormData(e);
       const formData = getFromData(e);
-      console.group("updated From Data")
+      console.group("updated From Data");
       console.log(formData);
-      console.groupEnd()
-      dispatch(updateBook(bookEditAction.book_edit.id,formData))
+      console.groupEnd();
+      await dispatch(updateBook(bookEditAction.book_edit.id, formData));
+      // dispatch(bookEdit(false, ""));
+      clearFormData();
     } else {
       const formData = getFromData(e);
       // console.log(JSON.stringify(formData));

@@ -1,49 +1,40 @@
 {
   "books": [
     {
-      "name": "Slow Horses ",
-      "author": "matha",
+      "name": "sdasdf",
+      "author": "sdfsaf sdf sdf",
       "thumbnail": "https://m.media-amazon.com/images/I/51Ga5GuElyL._SX331_BO1,204,203,200_.jpg",
-      "price": 14,
+      "price": 343,
       "rating": 3,
       "featured": false,
       "id": 1
     },
     {
-      "name": "The Last Thing He Told Me: A Novel",
-      "author": "Laura Dave",
+      "name": "Jameson Best",
+      "author": "Voluptatem in quis ",
       "thumbnail": "https://m.media-amazon.com/images/P/1501171348.01._SCLZZZZZZZ_SX500_.jpg",
-      "price": 13.99,
+      "price": 114,
       "rating": 4,
       "featured": false,
       "id": 2
     },
     {
       "name": "The Last Thing He Told Me: A Novel",
-      "author": "murgi",
+      "author": "wow",
       "thumbnail": "https://m.media-amazon.com/images/P/1501171348.01._SCLZZZZZZZ_SX500_.jpg",
       "price": 13,
       "rating": 4,
-      "featured": true,
+      "featured": false,
       "id": 3
     },
     {
-      "name": "Slow Horses ",
-      "author": "murgi",
+      "name": "Slow Horses 2",
+      "author": "mathaআ",
       "thumbnail": "https://m.media-amazon.com/images/I/51Ga5GuElyL._SX331_BO1,204,203,200_.jpg",
       "price": 14,
-      "rating": 2,
-      "featured": false,
-      "id": 4
-    },
-    {
-      "name": "Dante Boyer",
-      "author": "Recusandae Sit quib",
-      "thumbnail": "Dolorem soluta id la",
-      "price": 12,
       "rating": 3,
       "featured": false,
-      "id": 5
+      "id": 4
     }
   ]
 }
