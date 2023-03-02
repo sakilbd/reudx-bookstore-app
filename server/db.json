@@ -2,11 +2,11 @@
   "books": [
     {
       "name": "sdasdfee",
-      "author": "sdfsaf sdf sdf",
+      "author": "wow no way ",
       "thumbnail": "https://m.media-amazon.com/images/I/51Ga5GuElyL._SX331_BO1,204,203,200_.jpg",
       "price": 343,
       "rating": 3,
-      "featured": false,
+      "featured": true,
       "id": 1
     },
     {
@@ -14,27 +14,18 @@
       "author": "Voluptatem in quis some changes ",
       "thumbnail": "https://m.media-amazon.com/images/P/1501171348.01._SCLZZZZZZZ_SX500_.jpg",
       "price": 114,
-      "rating": 4,
-      "featured": false,
+      "rating": 3,
+      "featured": true,
       "id": 2
     },
     {
-      "name": "The Last Thing He Told Me: A Novel",
-      "author": "wow wow",
-      "thumbnail": "https://m.media-amazon.com/images/P/1501171348.01._SCLZZZZZZZ_SX500_.jpg",
-      "price": 13,
-      "rating": 4,
-      "featured": false,
+      "name": "Wilma Davidson",
+      "author": "Aute ut iusto odio m",
+      "thumbnail": "Maiores consequatur",
+      "price": 260,
+      "rating": 1,
+      "featured": true,
       "id": 3
-    },
-    {
-      "name": "Slow Horses 2",
-      "author": "matha sdfsdfsdf",
-      "thumbnail": "https://m.media-amazon.com/images/I/51Ga5GuElyL._SX331_BO1,204,203,200_.jpg",
-      "price": 14,
-      "rating": 3,
-      "featured": false,
-      "id": 4
     }
   ]
 }

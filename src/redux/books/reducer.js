@@ -24,7 +24,7 @@ const reducer = (state = initialState, action) => {
     case UPDATED:
       return state.map((book) => {
         if (book.id == action.payload.book_id) {
-          return action.payload.book_updated_data;
+          return {...action.payload.book_updated_data};
         }
 
         return {

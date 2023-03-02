@@ -10,7 +10,8 @@ const updateBook = (bookID, currentStatus) => {
             },
         });
         const book = await response.json();
-
+        console.group("update Book thunk");
+        console.log(book)
         // dispatch(updated(todo.id));
         dispatch(updated(bookID,currentStatus));
     };

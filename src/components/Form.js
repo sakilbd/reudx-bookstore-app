@@ -41,7 +41,7 @@ function Form() {
 
     for (let i = 0; i < fieldsCount; i++) {
       if (fields[i].type == "checkbox") {
-        formData[fields[i].name] = checkBox;
+        formData[fields[i].name] = !checkBox;
       } else if (fields[i].type == "number") {
         formData[fields[i].name] = parseInt(fields[i].value);
       } else {
@@ -75,7 +75,7 @@ function Form() {
       console.log(formData);
       console.groupEnd();
       await dispatch(updateBook(bookEditAction.book_edit.id, formData));
-      dispatch(bookEdit(false, ""));
+      dispatch(bookEdit(false, -1));
       clearFormData();
     } else {
       const formData = getFromData(e);
