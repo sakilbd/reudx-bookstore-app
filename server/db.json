@@ -5,7 +5,7 @@
       "author": "wow no way ",
       "thumbnail": "https://m.media-amazon.com/images/I/51Ga5GuElyL._SX331_BO1,204,203,200_.jpg",
       "price": 343,
-      "rating": 3,
+      "rating": 5,
       "featured": true,
       "id": 1
     },
@@ -19,67 +19,40 @@
       "id": 2
     },
     {
-      "name": "Tatum Moore",
-      "author": "Provident velit qui",
-      "thumbnail": "Enim dolore sed sapi",
-      "price": 377,
-      "rating": 2,
+      "name": "dgfsdaf",
+      "author": "dsfsadf",
+      "thumbnail": "sdfsadf",
+      "price": 33,
+      "rating": 3,
       "featured": true,
       "id": 3
     },
     {
-      "name": "Quincy Gilliam",
-      "author": "Consequatur invento",
-      "thumbnail": "Duis est unde iste d",
-      "price": 367,
+      "name": "Seth Mcfarland",
+      "author": "Saepe praesentium qu",
+      "thumbnail": "Eveniet ex rem accu",
+      "price": 813,
       "rating": 5,
-      "featured": false,
+      "featured": true,
       "id": 4
     },
     {
-      "id": -1,
-      "name": "Mona Mcleod",
-      "author": "Earum in reprehender",
-      "thumbnail": "In nihil et quo volu",
-      "price": 619,
-      "rating": 5,
-      "featured": true
-    },
-    {
-      "name": "Destiny Haynes",
-      "author": "Distinctio Ut persp",
-      "thumbnail": "Excepturi sit volup",
-      "price": 974,
-      "rating": 5,
+      "name": "Minerva Dotson",
+      "author": "Rerum libero cillum ",
+      "thumbnail": "Sint quaerat aliqui",
+      "price": 297,
+      "rating": 2,
       "featured": true,
       "id": 5
     },
     {
-      "name": "Gillian Clements",
-      "author": "Fugiat tempore porr",
-      "thumbnail": "Aliquid duis ullamco",
-      "price": 705,
-      "rating": 2,
-      "featured": true,
-      "id": 6
-    },
-    {
-      "name": "Marvin Rich",
-      "author": "Iste do doloremque q",
-      "thumbnail": "Ut aut quibusdam mag",
-      "price": 576,
+      "name": "September Raymond",
+      "author": "In voluptatem beatae",
+      "thumbnail": "Qui voluptatem enim ",
+      "price": 198,
       "rating": 3,
       "featured": false,
-      "id": 7
-    },
-    {
-      "name": "Tyler Carlson",
-      "author": "Soluta rerum sunt ad",
-      "thumbnail": "Sed aute corporis re",
-      "price": 427,
-      "rating": 4,
-      "featured": true,
-      "id": 8
+      "id": 6
     }
   ]
 }

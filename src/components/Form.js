@@ -14,12 +14,15 @@ function Form() {
   const changeHandle = (e) => {
     if (e.target.type == "checkbox") {
 
-     
-      setCheckBox(!checkBox)
+      const {checked } = e.target;
+      
+        
+      
+      // setCheckBox(!checkBox)
       console.group("checkbox Value ")
-      console.warn(checkBox)
+      console.warn(e.target)
       console.groupEnd()
-      setInput({ ...input, [e.target.name]: checkBox });
+      setInput({ ...input, [e.target.name]: checked});
     } else {
       setInput({ ...input, [e.target.name]: e.target.value });
     }
@@ -55,8 +58,11 @@ function Form() {
     
     for (let i = 0; i < fieldsCount; i++) {
       if (fields[i].type == "checkbox") {
+        const {value,checked } =fields[i];
+        // formData[fields[i].name] = (status=='update')?!checkBox:!checkBox;
+        formData[fields[i].name] = checked;
+        console.warn(`inside getFormData ${checked}`)
 
-        formData[fields[i].name] = (status=='update')?!checkBox:!checkBox;
       } else if (fields[i].type == "number") {
         formData[fields[i].name] = parseInt(fields[i].value);
       } else {
@@ -90,12 +96,12 @@ function Form() {
       console.log(formData);
       console.groupEnd();
       await dispatch(updateBook(bookEditAction.book_edit.id, formData));
-      dispatch(bookEdit(false, -1));
+      await dispatch(bookEdit(false, ""));
       clearFormData();
     } else {
       const formData = getFromData(e);
       console.log(JSON.stringify(formData));
-      dispatch(addBooks(formData));
+      await dispatch(addBooks(formData)).then();
       clearFormData();
     }
   }
@@ -182,7 +188,7 @@ function Form() {
               name="featured"
               class="w-4 h-4"
               // onClick={() => setCheckBox(!checkBox)}
-              checked={input.featured}
+              checked={input.featured&&input.featured}
               onChange={changeHandle}
             />
             <label for="featured" class="ml-2 text-sm">
