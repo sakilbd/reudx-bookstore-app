@@ -1,0 +1,40 @@
+{
+  "books": [
+    {
+      "name": "Knox Robertson",
+      "author": "In et saepe providen",
+      "thumbnail": "https://m.media-amazon.com/images/P/1501171348.01._SCLZZZZZZZ_SX500_.jpg",
+      "price": "88",
+      "rating": 5,
+      "featured": true,
+      "id": 1
+    },
+    {
+      "name": "Nissim Booth",
+      "author": "Sit placeat ipsa ",
+      "thumbnail": "https://m.media-amazon.com/images/P/1501171348.01._SCLZZZZZZZ_SX500_.jpg",
+      "price": "5",
+      "rating": 5,
+      "featured": true,
+      "id": 2
+    },
+    {
+      "name": "dsfsad",
+      "author": "asdfasdf",
+      "thumbnail": "https://m.media-amazon.com/images/P/1501171348.01._SCLZZZZZZZ_SX500_.jpg",
+      "price": "343",
+      "rating": 4,
+      "featured": false,
+      "id": 3
+    },
+    {
+      "name": "sadf",
+      "author": "sdf",
+      "thumbnail": "https://m.media-amazon.com/images/P/1501171348.01._SCLZZZZZZZ_SX500_.jpg",
+      "price": "34",
+      "rating": 5,
+      "featured": true,
+      "id": 4
+    }
+  ]
+}
