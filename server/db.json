@@ -19,22 +19,67 @@
       "id": 2
     },
     {
-      "name": "Zachary Powell",
-      "author": "Vel autem et veniam dsfgf",
-      "thumbnail": "https://m.media-amazon.com/images/P/1501171348.01._SCLZZZZZZZ_SX500_.jpg",
-      "price": 503,
-      "rating": 1,
+      "name": "Tatum Moore",
+      "author": "Provident velit qui",
+      "thumbnail": "Enim dolore sed sapi",
+      "price": 377,
+      "rating": 2,
+      "featured": true,
+      "id": 3
+    },
+    {
+      "name": "Quincy Gilliam",
+      "author": "Consequatur invento",
+      "thumbnail": "Duis est unde iste d",
+      "price": 367,
+      "rating": 5,
       "featured": false,
       "id": 4
     },
     {
       "id": -1,
-      "name": "Samantha Conley",
-      "author": "Debitis debitis fugi",
-      "thumbnail": "Minus modi commodi f",
-      "price": 303,
+      "name": "Mona Mcleod",
+      "author": "Earum in reprehender",
+      "thumbnail": "In nihil et quo volu",
+      "price": 619,
+      "rating": 5,
+      "featured": true
+    },
+    {
+      "name": "Destiny Haynes",
+      "author": "Distinctio Ut persp",
+      "thumbnail": "Excepturi sit volup",
+      "price": 974,
+      "rating": 5,
+      "featured": true,
+      "id": 5
+    },
+    {
+      "name": "Gillian Clements",
+      "author": "Fugiat tempore porr",
+      "thumbnail": "Aliquid duis ullamco",
+      "price": 705,
+      "rating": 2,
+      "featured": true,
+      "id": 6
+    },
+    {
+      "name": "Marvin Rich",
+      "author": "Iste do doloremque q",
+      "thumbnail": "Ut aut quibusdam mag",
+      "price": 576,
       "rating": 3,
-      "featured": false
+      "featured": false,
+      "id": 7
+    },
+    {
+      "name": "Tyler Carlson",
+      "author": "Soluta rerum sunt ad",
+      "thumbnail": "Sed aute corporis re",
+      "price": 427,
+      "rating": 4,
+      "featured": true,
+      "id": 8
     }
   ]
 }

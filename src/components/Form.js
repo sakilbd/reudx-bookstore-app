@@ -45,7 +45,7 @@ function Form() {
     return () => {};
   }, [bookEditAction]);
 
-  const getFromData = (e) => {
+  const getFromData = (e,status="create") => {
     let fields = e.target;
     let fieldsCount = fields.length - 1; //as there is a button so we have to exclued that
     let formData = {};
@@ -53,11 +53,10 @@ function Form() {
       formData={id:bookEditAction.book_edit.id}
     }
     
-    
-
     for (let i = 0; i < fieldsCount; i++) {
       if (fields[i].type == "checkbox") {
-        formData[fields[i].name] = !checkBox;
+
+        formData[fields[i].name] = (status=='update')?!checkBox:!checkBox;
       } else if (fields[i].type == "number") {
         formData[fields[i].name] = parseInt(fields[i].value);
       } else {
@@ -86,7 +85,7 @@ function Form() {
     // console.log(e.target[6].id)
     // console.groupEnd();
     if (e.target[6].id == "update") {
-      const formData = getFromData(e);
+      const formData = getFromData(e,"update");
       console.group("updated From Data");
       console.log(formData);
       console.groupEnd();
@@ -95,7 +94,7 @@ function Form() {
       clearFormData();
     } else {
       const formData = getFromData(e);
-      // console.log(JSON.stringify(formData));
+      console.log(JSON.stringify(formData));
       dispatch(addBooks(formData));
       clearFormData();
     }

@@ -6,6 +6,7 @@ export default function Navbar() {
   const bookAction = useSelector((state)=>state.booksAction);
   const dispatch = useDispatch();
   const searchTextHandler=(e)=>{
+   
     const value=e.target.value;
     console.log(value);
     dispatch(bookSearch(value));
