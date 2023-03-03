@@ -6,14 +6,17 @@ import { bookEdit } from "../redux/booksAction/actions";
 
 function BookCard({ bookInfo }) {
 
-  const books = useSelector((state)=>state.books);
+  // const books = useSelector((state)=>state.books);
   const dispatch = useDispatch();
   let rating = new Array(parseInt(bookInfo?.rating)).fill(0);
   const deleteBookHandler = ()=>{
     dispatch(deleteBooks(bookInfo.id))
   }
-  const bookEditHandler = (id)=>{
-    dispatch(bookEdit(true,id))
+  const bookEditHandler = (e)=>{
+    console.group("bookCard Bookinfo")
+    console.log(bookInfo)
+    console.groupEnd();
+    dispatch(bookEdit(true,bookInfo.id))
   }
   return (
     <div>
@@ -32,7 +35,7 @@ function BookCard({ bookInfo }) {
             )}
 
             <div class="text-gray-500 space-x-2">
-              <button class="lws-edit" onClick={()=>bookEditHandler(bookInfo.id)}>
+              <button class="lws-edit" onClick={(e)=>bookEditHandler( bookInfo.id)}>
                 <svg
                   fill="none"
                   viewBox="0 0 24 24"

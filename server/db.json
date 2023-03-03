@@ -1,7 +1,7 @@
 {
   "books": [
     {
-      "name": "sdasdfee",
+      "name": "sdasdfee sdfsad ",
       "author": "wow no way ",
       "thumbnail": "https://m.media-amazon.com/images/I/51Ga5GuElyL._SX331_BO1,204,203,200_.jpg",
       "price": 343,
@@ -11,7 +11,7 @@
     },
     {
       "name": "Jameson Best sdaf ",
-      "author": "Voluptatem in quis some changes ",
+      "author": "Voluptatem  sdf sadf  sdfsadfsdf",
       "thumbnail": "https://m.media-amazon.com/images/P/1501171348.01._SCLZZZZZZZ_SX500_.jpg",
       "price": 114,
       "rating": 3,
@@ -19,13 +19,31 @@
       "id": 2
     },
     {
-      "name": "Wilma Davidson",
-      "author": "Aute ut iusto odio m",
-      "thumbnail": "Maiores consequatur",
-      "price": 260,
+      "name": "Zachary Powell",
+      "author": "Vel autem et veniam dsfgf",
+      "thumbnail": "https://m.media-amazon.com/images/P/1501171348.01._SCLZZZZZZZ_SX500_.jpg",
+      "price": 503,
       "rating": 1,
+      "featured": false,
+      "id": 4
+    },
+    {
+      "name": "Zachary Powell",
+      "author": "Vel autem et veniam",
+      "thumbnail": "https://m.media-amazon.com/images/P/1501171348.01._SCLZZZZZZZ_SX500_.jpg",
+      "price": 503,
+      "rating": 5,
       "featured": true,
-      "id": 3
+      "id": 5
+    },
+    {
+      "name": "Zachary Powell",
+      "author": "Vel autem et veniam",
+      "thumbnail": "https://m.media-amazon.com/images/P/1501171348.01._SCLZZZZZZZ_SX500_.jpg",
+      "price": 503,
+      "rating": 5,
+      "featured": true,
+      "id": 6
     }
   ]
 }

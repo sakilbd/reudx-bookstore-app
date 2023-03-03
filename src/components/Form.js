@@ -24,6 +24,11 @@ function Form() {
       let filterdBook = books.filter(
         (item) => item.id === bookEditAction.book_edit.id
       );
+      console.group("Form UseEffect")
+      console.log(filterdBook)
+      console.groupEnd();
+
+      // setInput({...input,id:bookEditAction.book_edit.id});
       updateBookInfo = { ...filterdBook[0] };
       // console.log("ghorer dim");
       // console.log(updateBookInfo.name);
@@ -38,10 +43,15 @@ function Form() {
     let fields = e.target;
     let fieldsCount = fields.length - 1; //as there is a button so we have to exclued that
     let formData = {};
+    if(bookEditAction.book_edit.id){
+      formData={id:bookEditAction.book_edit.id}
+    }
+    
+    
 
     for (let i = 0; i < fieldsCount; i++) {
       if (fields[i].type == "checkbox") {
-        formData[fields[i].name] = !checkBox;
+        formData[fields[i].name] = checkBox;
       } else if (fields[i].type == "number") {
         formData[fields[i].name] = parseInt(fields[i].value);
       } else {
@@ -81,6 +91,7 @@ function Form() {
       const formData = getFromData(e);
       // console.log(JSON.stringify(formData));
       dispatch(addBooks(formData));
+      clearFormData();
     }
   }
   console.log(input);

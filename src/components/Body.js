@@ -73,7 +73,7 @@ function Body() {
             <div class="lws-bookContainer">
               {/* <!-- Card 1 --> */}
               {searchFiltered.map((item) => {
-                return <BookCard bookInfo={item} />;
+                return <BookCard key={item.id} bookInfo={item} />;
               })}
             </div>
           </div>
