@@ -1,11 +1,7 @@
 import {
     ADDED,
-    ALLCOMPLETED,
-    CLEARCOMPLETED,
-    COLORSELECTED,
     DELETED,
     LOADED,
-    TOGGLED,
     UPDATED,
 } from "./actionTypes";
 
