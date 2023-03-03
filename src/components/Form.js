@@ -13,6 +13,12 @@ function Form() {
 
   const changeHandle = (e) => {
     if (e.target.type == "checkbox") {
+
+     
+      setCheckBox(!checkBox)
+      console.group("checkbox Value ")
+      console.warn(checkBox)
+      console.groupEnd()
       setInput({ ...input, [e.target.name]: checkBox });
     } else {
       setInput({ ...input, [e.target.name]: e.target.value });
@@ -51,7 +57,7 @@ function Form() {
 
     for (let i = 0; i < fieldsCount; i++) {
       if (fields[i].type == "checkbox") {
-        formData[fields[i].name] = checkBox;
+        formData[fields[i].name] = !checkBox;
       } else if (fields[i].type == "number") {
         formData[fields[i].name] = parseInt(fields[i].value);
       } else {
@@ -176,7 +182,7 @@ function Form() {
               type="checkbox"
               name="featured"
               class="w-4 h-4"
-              onClick={() => setCheckBox(!checkBox)}
+              // onClick={() => setCheckBox(!checkBox)}
               checked={input.featured}
               onChange={changeHandle}
             />

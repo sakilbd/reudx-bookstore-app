@@ -28,22 +28,13 @@
       "id": 4
     },
     {
-      "name": "Zachary Powell",
-      "author": "Vel autem et veniam",
-      "thumbnail": "https://m.media-amazon.com/images/P/1501171348.01._SCLZZZZZZZ_SX500_.jpg",
-      "price": 503,
-      "rating": 5,
-      "featured": true,
-      "id": 5
-    },
-    {
-      "name": "Zachary Powell",
-      "author": "Vel autem et veniam",
-      "thumbnail": "https://m.media-amazon.com/images/P/1501171348.01._SCLZZZZZZZ_SX500_.jpg",
-      "price": 503,
-      "rating": 5,
-      "featured": true,
-      "id": 6
+      "id": -1,
+      "name": "Samantha Conley",
+      "author": "Debitis debitis fugi",
+      "thumbnail": "Minus modi commodi f",
+      "price": 303,
+      "rating": 3,
+      "featured": false
     }
   ]
 }
