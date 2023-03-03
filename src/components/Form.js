@@ -8,21 +8,15 @@ function Form() {
   const books = useSelector((state) => state.books);
   const bookEditAction = useSelector((state) => state.booksAction);
   const dispatch = useDispatch();
-  const [checkBox, setCheckBox] = useState(false);
   const [input, setInput] = useState({});
 
   const changeHandle = (e) => {
     if (e.target.type == "checkbox") {
-
-      const {checked } = e.target;
-      
-        
-      
-      // setCheckBox(!checkBox)
-      console.group("checkbox Value ")
-      console.warn(e.target)
-      console.groupEnd()
-      setInput({ ...input, [e.target.name]: checked});
+      const { checked } = e.target;
+      console.group("checkbox Value ");
+      console.warn(e.target);
+      console.groupEnd();
+      setInput({ ...input, [e.target.name]: checked });
     } else {
       setInput({ ...input, [e.target.name]: e.target.value });
     }
@@ -33,14 +27,12 @@ function Form() {
       let filterdBook = books.filter(
         (item) => item.id === bookEditAction.book_edit.id
       );
-      console.group("Form UseEffect")
-      console.log(filterdBook)
-      console.groupEnd();
+      // console.group("Form UseEffect")
+      // console.log(filterdBook)
+      // console.groupEnd();
 
-      // setInput({...input,id:bookEditAction.book_edit.id});
       updateBookInfo = { ...filterdBook[0] };
-      // console.log("ghorer dim");
-      // console.log(updateBookInfo.name);
+
       setInput({ ...input, ...updateBookInfo });
       console.log(JSON.stringify(input));
     }
@@ -48,21 +40,19 @@ function Form() {
     return () => {};
   }, [bookEditAction]);
 
-  const getFromData = (e,status="create") => {
+  const getFromData = (e) => {
     let fields = e.target;
     let fieldsCount = fields.length - 1; //as there is a button so we have to exclued that
     let formData = {};
-    if(bookEditAction.book_edit.id){
-      formData={id:bookEditAction.book_edit.id}
+    if (bookEditAction.book_edit.id) {
+      formData = { id: bookEditAction.book_edit.id };
     }
-    
+
     for (let i = 0; i < fieldsCount; i++) {
       if (fields[i].type == "checkbox") {
-        const {value,checked } =fields[i];
-        // formData[fields[i].name] = (status=='update')?!checkBox:!checkBox;
+        const { checked } = fields[i];
         formData[fields[i].name] = checked;
-        console.warn(`inside getFormData ${checked}`)
-
+        console.warn(`inside getFormData ${checked}`);
       } else if (fields[i].type == "number") {
         formData[fields[i].name] = parseInt(fields[i].value);
       } else {
@@ -87,11 +77,8 @@ function Form() {
 
   async function submitHandler(e) {
     e.preventDefault();
-    // console.group("Update Check ");
-    // console.log(e.target[6].id)
-    // console.groupEnd();
     if (e.target[6].id == "update") {
-      const formData = getFromData(e,"update");
+      const formData = getFromData(e, "update");
       console.group("updated From Data");
       console.log(formData);
       console.groupEnd();
@@ -100,13 +87,10 @@ function Form() {
       clearFormData();
     } else {
       const formData = getFromData(e);
-      console.log(JSON.stringify(formData));
-      await dispatch(addBooks(formData)).then();
+      await dispatch(addBooks(formData));
       clearFormData();
     }
   }
-  console.log(input);
-
   return (
     <div>
       <div class="p-4 overflow-hidden bg-white shadow-cardShadow rounded-md">
@@ -157,7 +141,7 @@ function Form() {
               <input
                 required
                 class="text-input"
-                type="number"
+                type="text"
                 id="input-Bookprice"
                 name="price"
                 value={input.price}
@@ -188,7 +172,7 @@ function Form() {
               name="featured"
               class="w-4 h-4"
               // onClick={() => setCheckBox(!checkBox)}
-              checked={input.featured&&input.featured}
+              checked={input.featured && input.featured}
               onChange={changeHandle}
             />
             <label for="featured" class="ml-2 text-sm">
@@ -197,11 +181,16 @@ function Form() {
             </label>
           </div>
           {bookEditAction.book_edit.status ? (
-            <button type="submit" class="submit" id="update">
+            <button
+              type="submit"
+              class="submit"
+              id="update"
+              style={{ background: "rgb(88 80 236 / 0.9)", color: "white" }}
+            >
               Update Book
             </button>
           ) : (
-            <button type="submit" class="submit" id="submit">
+            <button type="submit" class="submit" id="submit" style={{ background: "rgb(88 80 236 / 0.9)", color: "white" }}>
               Add Book
             </button>
           )}
